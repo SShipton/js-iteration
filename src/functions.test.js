@@ -35,7 +35,14 @@
  * the numbers multiplied by 2
  */
 
-// ...
+function doubleTrouble(array) {
+  const doubledArray = []
+  array.forEach(function(arrayItem) {
+    const doubled = arrayItem * 2
+    doubledArray.push(doubled)
+  })
+  return doubledArray
+}
 
 /*
  * 3) Define a function stringyIndexes() that takes an array of
@@ -338,7 +345,8 @@ test('mapYourself()', t => {
   t.deepEqual(mapSecond, [18, 0, 2])
 })
 
-test('Function Check - filter yourself', t => ensureDefined(t, 'filterYourself'))
+test('Function Check - filter yourself', t =>
+  ensureDefined(t, 'filterYourself'))
 test('filterYourself()', t => {
   const original = Array.prototype.filter
 
