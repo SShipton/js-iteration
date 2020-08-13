@@ -37,11 +37,8 @@ function yelling(array) {
  */
 
 function doubleTrouble(array) {
-  const doubledArray = []
-  array.forEach(function(arrayItem) {
-    const doubled = arrayItem * 2
-    doubledArray.push(doubled)
-  })
+  const doubledArray = array.map(number => number * 2)
+
   return doubledArray
 }
 
