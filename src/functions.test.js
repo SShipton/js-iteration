@@ -18,14 +18,15 @@
  * 1) Define a function named `yelling` that takes an array of
  * strings as an argument and returns a new array with all
  * the words forced to uppercase
- *
- * Example:
- *
- * const yelling = (array) => {
- *    // your code here
- * }
  */
-
+function yelling(array) {
+  const allCaps = []
+  array.forEach(function(arrayItem) {
+    const allCapsWords = arrayItem.toUpperCase()
+    allCaps.push(allCapsWords)
+  })
+  return allCaps
+}
 // ...
 
 /**
@@ -50,21 +51,28 @@ function doubleTrouble(array) {
  * suffixed with " is at index X" where X is the index of the element
  */
 
-// ...
+function stringyIndexes(array) {
+  var output = array.map((array, index) => `${array} is at index ${index}`)
+  return output
+}
 
 /*
  * 4) Define a function onlyTheEvenSurvive that accepts an array of
  * numbers and returns only the elements that are even
  */
 
-// ...
+function onlyTheEvenSurvive(array) {
+  return array.filter(num => num % 2 == 0)
+}
 
 /*
  * 5) Define a function onlyTheEvenIndexedSurvive that accepts an array of
  * numbers and returns only the elements at indexes that are even
  */
 
-// ...
+function onlyTheEvenIndexedSurvive(array) {
+  return array.filter((_, index) => index % 2 == 0)
+}
 
 /*
  * 6)  Define a function bestMoviesOfTheYear that accepts an array of
@@ -80,7 +88,11 @@ function doubleTrouble(array) {
  * }
  */
 
-// ...
+function bestMoviesOfTheYear(array, year) {
+  return array
+    .filter(movie => movie.score > 50 && movie.year === year)
+    .map(movie => movie.name)
+}
 
 /*
  * 7) Define a function everyoneIsOdd that accepts an array of
@@ -88,7 +100,9 @@ function doubleTrouble(array) {
  * odd.
  */
 
-// ...
+function everyoneIsOdd(array) {
+  return array.every(num => num % 2 != 0)
+}
 
 /*
  * 8) Define a function findTheNeedle that accepts an array of
@@ -96,7 +110,9 @@ function doubleTrouble(array) {
  * `needle` inside
  */
 
-// ...
+function findTheNeedle(array) {
+  return array.find(string => string.includes('needle'))
+}
 
 /*
  * 9) Define a function findTheNeedleIndex that accepts an array of
@@ -104,7 +120,9 @@ function doubleTrouble(array) {
  *  the word `needle` inside
  */
 
-// ...
+function findTheNeedleIndex(array) {
+  return array.findIndex(string => string.includes('needle'))
+}
 
 /*
  *` 10)  Define a function someoneToLove that accepts an array of
@@ -112,7 +130,9 @@ function doubleTrouble(array) {
  * four characters long
  */
 
-// ...
+function someoneToLove(array) {
+  return array.some(string => string.length == 4)
+}
 
 /*
  * 11) Define a function mapYourself that accepts an array of
@@ -123,7 +143,13 @@ function doubleTrouble(array) {
  * So no using forEach, map, filter, reduce, etc.
  */
 
-// ...
+function mapYourself(array) {
+  let result = []
+  for (let num of array) {
+    result.push(num * 2)
+  }
+  return result
+}
 
 /*
  * 12) Define a function filterYourself that accepts an
@@ -135,7 +161,15 @@ function doubleTrouble(array) {
  * So no using forEach, map, filter, reduce, etc.
  */
 
-// ...
+function filterYourself(array) {
+  let result = []
+  for (let num of array) {
+    if (num % 2 == 0) {
+      result.push(num)
+    }
+  }
+  return result
+}
 
 /*
  * 13) Define a function everyYourself that accepts an
@@ -147,7 +181,14 @@ function doubleTrouble(array) {
  * So no using forEach, map, filter, reduce, etc.
  */
 
-// ...
+function everyYourself(array) {
+  for (let num of array) {
+    if (num % 2 != 0) {
+      return false
+    }
+  }
+  return true
+}
 
 /**
  * NOTE: Don't modify anything below this line...
